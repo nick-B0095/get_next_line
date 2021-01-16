@@ -16,6 +16,7 @@ f_l *new_fd(f_l *files, int fd)
 {
 	f_l *tmp;
 
+	tmp = (f_1*)malloc(sizeof(f_1) * 1);
 	tmp->fd = fd;
 	tmp->indicator = 0;
 	tmp->next = NULL;
