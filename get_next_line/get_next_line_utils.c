@@ -14,11 +14,11 @@
 
 f_l *new_fd(f_l *files, int fd)
 {
-	f_l tmp;
+	f_l *tmp;
 
-	tmp.fd = fd;
-	tmp.indicator = 0;
-	tmp.next = NULL;
+	tmp->fd = fd;
+	tmp->indicator = 0;
+	tmp->next = NULL;
 	if (files)
 	{
 		while (files->next)
@@ -26,9 +26,7 @@ f_l *new_fd(f_l *files, int fd)
 		files->next = &tmp;
 		files = files->next;
 	}
-	else
-		files = &tmp;
-	return (files);
+	return (tmp);
 }
 
 int line_append(f_l *f)
